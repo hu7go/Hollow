@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239c8e5f6918b8f449603ecf5569804b, type: 3}
+  m_Name: 04HeavyPlating
+  m_EditorClassIdentifier: 
+  itemName: Heavy Plating
+  image: {fileID: 21300024, guid: 109989a9db087654c9dba4644963d1d3, type: 3}
+  armorValue: 6
+  cost: 800

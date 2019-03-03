@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1346547150823382}
+  m_IsPrefabAsset: 1
+--- !u!1 &1346547150823382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4781204647840490}
+  - component: {fileID: 114106961812111364}
+  m_Layer: 0
+  m_Name: Shop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4781204647840490
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346547150823382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114106961812111364
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346547150823382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b43061e2cb0bec4c9e87be8f12ed95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armor: {fileID: 0}
+  weapon: {fileID: 0}
+  potion: {fileID: 0}
+  shopSlotArmor: {fileID: 0}
+  shopSlotWeapon: {fileID: 0}
+  shopSlotPotion: {fileID: 0}
+  armorTextCost: {fileID: 0}
+  armorTextStats: {fileID: 0}
+  armorTextName: {fileID: 0}
+  weaponTextCost: {fileID: 0}
+  weaponTextStats: {fileID: 0}
+  weaponTextName: {fileID: 0}
+  potionTextCost: {fileID: 0}
+  potionTextStats: {fileID: 0}
+  potionTextName: {fileID: 0}
+  playerMoney: {fileID: 0}
+  xPos: 600
+  deactivatedXPos: 1500
+  playerArmor: {fileID: 0}
+  playerWeapon: {fileID: 0}
+  playerPotion: {fileID: 0}
+  playerShopSlotArmor: {fileID: 0}
+  playerShopSlotWeapon: {fileID: 0}
+  playerShopSlotPotion: {fileID: 0}
+  playerArmorTextStats: {fileID: 0}
+  playerArmorTextName: {fileID: 0}
+  playerWeaponTextStats: {fileID: 0}
+  playerWeaponTextName: {fileID: 0}
+  playerPotionTextStats: {fileID: 0}
+  playerPotionTextName: {fileID: 0}
+  xPosPlayer: -640
+  deactivatedXPosPlayer: -1600
+  continueButton: {fileID: 0}
+  availableArmors:
+  - {fileID: 11400000, guid: 53d6e0a05c29cfb42b28929c5fc95977, type: 2}
+  - {fileID: 11400000, guid: 9d2a73f2233c86b4fb46c2be9409f1dd, type: 2}
+  - {fileID: 11400000, guid: 2087ef4fa0e6dc3438fd13984794f87f, type: 2}
+  - {fileID: 11400000, guid: e8c8e24a9fdd3484b9bcedda2ace6caa, type: 2}
+  - {fileID: 11400000, guid: a5014ea810a0ae04fbca96bac984381f, type: 2}
+  availableWeapons:
+  - {fileID: 11400000, guid: 2bd59ef57a6b1fe4b858e6d446bfcff5, type: 2}
+  - {fileID: 11400000, guid: 5f3fc644aa6611446a8ef41c86e2f840, type: 2}
+  - {fileID: 11400000, guid: 17513535f2969a84280ec336a2513a85, type: 2}
+  - {fileID: 11400000, guid: fd51cdba41bee184bb3114e743f2b8e3, type: 2}
+  availablePotions:
+  - {fileID: 11400000, guid: 568565b27f9110b46b2758cecbdafa30, type: 2}
+  - {fileID: 11400000, guid: c15bf76d0a0e301458d2eaccdf0d1f1a, type: 2}
+  currentArmors: []
+  currentWeapons: []
+  currentPotions: []

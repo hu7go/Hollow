@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daaed9c2b0e1b4144a83b4012d3096aa, type: 3}
+  m_Name: MajorHealthPotion
+  m_EditorClassIdentifier: 
+  itemName: Major health potion
+  effect: {fileID: 114481505028378536, guid: c9a8793a9f26896448fed0f600e5962c, type: 2}
+  emptyPotion: {fileID: 1354673654752336, guid: 00d8fcb7a7b7a2f4eab7e3ab3c2dbaef,
+    type: 2}
+  image: {fileID: 21300004, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
+  cost: 150
+  description: Heals you for 10 hit points!
