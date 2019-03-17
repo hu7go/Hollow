@@ -41,6 +41,9 @@ public class RoomGenerator : MonoBehaviour
     private List<Transform> ceilSpawnTest;
     private List<Vector3> ceilSpawn;
 
+    private Coord startCoord;
+    private Coord endCoord;
+    private List<Coord> floorCoords = new List<Coord>(); 
 
     [Header("The best value so far has been 51")]
     [Range(0, 100)]
@@ -77,7 +80,7 @@ public class RoomGenerator : MonoBehaviour
             SmoothMap();
         }
 
-        Openings();
+        //Openings();
         
         ProcessMap();
 
@@ -424,7 +427,7 @@ public class RoomGenerator : MonoBehaviour
         return tiles;
     }
 
-    bool IsInMapRange(int x, int y)
+    public bool IsInMapRange(int x, int y)
     {
         //This sort of decides the thickness of the edges
 
@@ -624,6 +627,7 @@ public class RoomGenerator : MonoBehaviour
                         {
                             backgroundScript.isAboveGround = true;
                             spawnLocations.Add(backgroundScript.gameObject.transform);
+                            floorCoords.Add(new Coord(x, y));
                         }
 
                         backgroundScript.RandomSprite();
@@ -650,6 +654,9 @@ public class RoomGenerator : MonoBehaviour
 
         //This is all happens after the room has fully spawned in!
         GetComponent<CompositeCollider2D>().GenerateGeometry();
+
+        endCoord = floorCoords[floorCoords.Count - 1];
+        startCoord = floorCoords[0];
 
         mySpawner.StartSpawning(spawnLocations);
 
@@ -834,7 +841,8 @@ public class RoomGenerator : MonoBehaviour
 
     private void CheckForError ()
     {
-        
+        Carver carver = new Carver();
+        carver.Start(map, startCoord, endCoord, width, height, this);
     }
 
     public List<Vector3> CeilList ()
