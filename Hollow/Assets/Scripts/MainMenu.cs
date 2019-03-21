@@ -20,6 +20,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject playButton;
 
     [Space(20)]
+    [SerializeField] private GameObject howToPlayMenu;
+    [SerializeField] private GameObject howToPlayBackButton;
+
+    [Space(20)]
     [SerializeField] private Slider masterSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider effectsSlider;
@@ -98,6 +102,13 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(gameName);
     }
 
+    public void HowToPlay()
+    {
+        playMenu.SetActive(false);
+        howToPlayMenu.SetActive(true);
+        es.SetSelectedGameObject(howToPlayBackButton);
+    }
+
     private void FirstMenu ()
     {
         firstMenu.SetActive(true);
@@ -123,6 +134,7 @@ public class MainMenu : MonoBehaviour
         playerAnim.Move();
 
         playMenu.SetActive(true);
+        howToPlayMenu.SetActive(false);
         firstMenu.SetActive(false);
         es.SetSelectedGameObject(playButton);
     }
