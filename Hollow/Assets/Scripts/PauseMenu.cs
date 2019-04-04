@@ -22,6 +22,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseObj;
     public GameObject optionsObj;
 
+    [Space(20)]
+    public Slider masterSlider;
+    public Slider musicSlider;
+    public Slider effectsSlider;
+
     private bool paused = false;
 
     public void Start()
@@ -64,6 +69,10 @@ public class PauseMenu : MonoBehaviour
 
         pauseObj.SetActive(true);
         SetPauseButton();
+
+        masterSlider.value = SoundManager.Instance.GetMasterVolume();
+        musicSlider.value = SoundManager.Instance.GetMusicVolume();
+        effectsSlider.value = SoundManager.Instance.GetEffectsVolume();
     }
 
     public void UnPaused ()

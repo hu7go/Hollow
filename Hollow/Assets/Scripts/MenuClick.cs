@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class MenuClick : MonoBehaviour, ISelectHandler
 {
-    AudioSource aS;
+    public AudioSource aS;
 
     private void Start()
     {
@@ -15,6 +15,12 @@ public class MenuClick : MonoBehaviour, ISelectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
-        aS.Play();
+        if (aS == null)
+        {
+            aS = GetComponent<AudioSource>();
+        }
+
+        if (aS.isPlaying == false)
+            aS.Play();
     }
 }

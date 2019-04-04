@@ -11,6 +11,9 @@ public class Click : MonoBehaviour
 
     public void Clicking ()
     {
+        if (aS.isPlaying)
+            return;
+
         aS.pitch = Random.Range(0.9f, 1.1f);
         aS.Play();
     }

@@ -57,7 +57,7 @@ public class RoomGenerator : MonoBehaviour
     public string seed;
     public bool useRandomSeed;
 
-    [HideInInspector]
+    [HideInInspector, Tooltip("if 1 its a wall, if 0 its empty")]
     public int[,] map;
 
     public int numberOfSmoothingSweeps = 5;
@@ -626,8 +626,11 @@ public class RoomGenerator : MonoBehaviour
                         if (closestNeighbour.down && !closestNeighbour.right && !closestNeighbour.left && !closestNeighbour.up)
                         {
                             backgroundScript.isAboveGround = true;
-                            spawnLocations.Add(backgroundScript.gameObject.transform);
+                            spawnLocations.Add(backgroundScript.transform);
                             floorCoords.Add(new Coord(x, y));
+
+                            //TEmp
+                            list.Add(backgroundScript.transform.position);
                         }
 
                         backgroundScript.RandomSprite();
@@ -662,7 +665,6 @@ public class RoomGenerator : MonoBehaviour
 
         if (startArea)
             mySpawner.SpawnPlayer(spawnLocations);
-
     }
 
     public void SpawnWall(Vector3 pos, int x, int y)
@@ -842,12 +844,34 @@ public class RoomGenerator : MonoBehaviour
     private void CheckForError ()
     {
         Carver carver = new Carver();
-        carver.Start(map, startCoord, endCoord, width, height, this);
+        carver.Start(map, width, height, this);
     }
+
+    List<Vector3> list = new List<Vector3>();
 
     public List<Vector3> CeilList ()
     {
         return ceilSpawn;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        for (int i = 0; i < list.Count; i++)
+        {
+            Gizmos.DrawWireCube(list[i], Vector3.one * .3f);
+        }
+
+        for (int i = 0; i < floorCoords.Count; i++)
+        {
+            if (i == 0)
+                Gizmos.color = Color.blue;
+            else
+                Gizmos.color = Color.green;
+
+            Vector3 pos = new Vector3(floorCoords[i].tileX, floorCoords[i].tileY, 0);
+            Gizmos.DrawWireCube(pos, Vector3.one * .15f);
+        }
     }
 }
 

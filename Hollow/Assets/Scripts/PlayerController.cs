@@ -61,7 +61,16 @@ public class PlayerController : ChangeDirection
 
         weapon = GetComponentInChildren<PlayerWeapon>();
 
+        StartCoroutine(ColliderOn());
+
         PotionSprite();
+    }
+
+    private IEnumerator ColliderOn ()
+    {
+        mainCollider.enabled = false;
+        yield return new WaitForSeconds(1);
+        mainCollider.enabled = true;
     }
 
     public void Update()
@@ -124,6 +133,7 @@ public class PlayerController : ChangeDirection
             animController.BlockAnim(isBlocking);
         }
 
+#if UNITY_EDITOR
         if (Input.GetKey(KeyCode.F))
         {
             Debug.DrawLine(transform.position + new Vector3(0,0.1f,0), Camera.main.ScreenToWorldPoint(new Vector3((Input.mousePosition.x), (Input.mousePosition.y), 1)), Color.red);
@@ -134,6 +144,7 @@ public class PlayerController : ChangeDirection
             if (canTeleport)
                 Teleport();
         }
+#endif
 
         //Use a potion
         if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Potion"))

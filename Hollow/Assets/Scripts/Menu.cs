@@ -24,8 +24,8 @@ public class Menu : MonoBehaviour
         pause.SetActive(false);
         options.SetActive(true);
 
-        masterSlider.value = GameManager.Instance.GetMasterVolume();
-        musicSlider.value = GameManager.Instance.GetMusicVolume();
-        effectsSlider.value = GameManager.Instance.GetEffectsVolume();
+        masterSlider.value = SoundManager.Instance.GetMasterVolume();
+        musicSlider.value = SoundManager.Instance.GetMusicVolume();
+        effectsSlider.value = SoundManager.Instance.GetEffectsVolume();
     }
 }

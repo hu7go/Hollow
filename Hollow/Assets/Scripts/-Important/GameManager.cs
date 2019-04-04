@@ -35,9 +35,6 @@ public class GameManager : MonoBehaviour
     public bool hasDied = false;
     public bool stopSpawn = false;
 
-    [Space(20)]
-    [SerializeField] private AudioMixer master;
-
     private Camera currentCam;
     private bool startMusic = true;
 
@@ -50,10 +47,6 @@ public class GameManager : MonoBehaviour
     private int hitsTaken;
     private int hitsBlocked;
     //
-
-    private float masterVolume;
-    private float musicVolume;
-    private float effectsVolume;
 
     //TODO: try to make this a inheritable class so this is not on the game managers script
     private static bool created = false;
@@ -334,40 +327,5 @@ public class GameManager : MonoBehaviour
         return endMoney;
     }
 
-    ///
-
-    ///Audio stuffs
-    public void MasterLevel (float volume)
-    {
-        master.SetFloat("MasterVolume", volume);
-        masterVolume = volume;
-    }
-
-    public void MusicLevel (float volume)
-    {
-        master.SetFloat("MusicVolume", volume);
-        musicVolume = volume;
-    }
-
-    public void EffectsLevel (float volume)
-    {
-        master.SetFloat("EffectsVolume", volume);
-        effectsVolume = volume;
-    }
-
-    public float GetMasterVolume ()
-    {
-        return masterVolume;
-    }
-
-    public float GetMusicVolume ()
-    {
-        return musicVolume;
-    }
-
-    public float GetEffectsVolume ()
-    {
-        return effectsVolume;
-    }
     ///
 }

@@ -7,7 +7,7 @@ public class Carver
     private List<Coord> tmp = new List<Coord>();
     private int numberOfCarvings = 1;
 
-    public void Start(int[,] map, Coord startPos, Coord endPos, int width, int height, RoomGenerator gen)
+    public void Start(int[,] map, int width, int height, RoomGenerator gen)
     {
         for (int i = 0; i < numberOfCarvings; i++)
         {

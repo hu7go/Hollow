@@ -22,6 +22,7 @@ public class MainMenu : MonoBehaviour
     [Space(20)]
     [SerializeField] private GameObject howToPlayMenu;
     [SerializeField] private GameObject howToPlayBackButton;
+    [SerializeField] private GameObject howToPlayButton;
 
     [Space(20)]
     [SerializeField] private Slider masterSlider;
@@ -122,9 +123,9 @@ public class MainMenu : MonoBehaviour
         firstMenu.SetActive(false);
         es.SetSelectedGameObject(optionsButton);
 
-        masterSlider.value = GameManager.Instance.GetMasterVolume();
-        musicSlider.value = GameManager.Instance.GetMusicVolume();
-        effectsSlider.value = GameManager.Instance.GetEffectsVolume();
+        masterSlider.value = SoundManager.Instance.GetMasterVolume();
+        musicSlider.value = SoundManager.Instance.GetMusicVolume();
+        effectsSlider.value = SoundManager.Instance.GetEffectsVolume();
     }
 
     public void PlayMenu ()
@@ -135,6 +136,7 @@ public class MainMenu : MonoBehaviour
 
         playMenu.SetActive(true);
         howToPlayMenu.SetActive(false);
+        howToPlayButton.SetActive(true);
         firstMenu.SetActive(false);
         es.SetSelectedGameObject(playButton);
     }
@@ -148,6 +150,22 @@ public class MainMenu : MonoBehaviour
         playMenu.SetActive(false);
         firstMenu.SetActive(true);
         es.SetSelectedGameObject(firstButton);
+    }
+
+    public void HowToPlayMenu()
+    {
+        howToPlayMenu.SetActive(true);
+        playMenu.SetActive(false);
+
+        es.SetSelectedGameObject(howToPlayBackButton);
+    }
+
+    public void HowToPlayBack()
+    {
+        howToPlayMenu.SetActive(false);
+        playMenu.SetActive(true);
+
+        es.SetSelectedGameObject(playButton);
     }
 
     public void CloseOptions ()
